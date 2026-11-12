@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DepositReview</title><script type="module" src="./app.js"></script>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4f5ef;color:#172a20;font:1rem/1.55 system-ui}main,header>div{width:min(1060px,calc(100% - 32px));margin:auto}header{background:white;border-bottom:1px solid #dce4da;padding:18px 0;font-weight:750}section{margin:28px 0}h1{font:clamp(2.8rem,7vw,5.1rem)/1 Georgia;margin:10px 0}h2,h3{line-height:1.2}.hero{border-radius:20px;background:#e0ebde;padding:clamp(24px,5vw,55px)}.hero p{max-width:62ch}small{font-weight:700;color:#28553e}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(235px,100%),1fr));gap:14px}.card,.panel{background:white;padding:20px;border:1px solid #d9e1d7;border-radius:12px}.badge{background:#e1ecdf;border-radius:30px;padding:5px 10px;font-size:.8rem;font-weight:750}.notice{background:#f7edd5;padding:10px;border-radius:8px}label{display:block;margin:10px 0}input,textarea,select{display:block;width:100%;max-width:650px;padding:8px;border:1px solid #8ea698;border-radius:6px;font:inherit}button{background:#24553c;color:white;border:0;border-radius:7px;padding:9px 15px;font:inherit;cursor:pointer}button:disabled{opacity:.6}a,summary{color:#24553c}pre,code{white-space:pre-wrap;overflow-wrap:anywhere}details{margin-top:14px}
+</style>
+<header><div>▤ DepositReview</div></header><main>
+<section class="hero"><small>RENTAL DEPOSIT DISPUTES</small><h1>Review every deduction.</h1><p>Landlords and tenants submit evidence and respond to each other. GenLayer validators compare the condition, item identity and amount behind each claim.</p><a href="#workspace">Open the StudioNet workspace ↓</a></section>
+<section><small>ILLUSTRATIVE CASE</small><h2>Three deductions, three findings</h2><div class="grid">
+<article class="card"><span class="badge">Damage supported</span><h3>Broken bathroom fixture</h3><p>The inventory shows a working handle. The move-out report and itemized invoice support the $85 replacement.</p></article>
+<article class="card"><span class="badge">Pre-existing</span><h3>Living-room stain</h3><p>Both inspections show the same stain beside the window. The $120 deduction is unsupported.</p></article>
+<article class="card"><span class="badge">Unresolved</span><h3>Kitchen cleaning</h3><p>The $140 invoice combines whole-unit services without an itemized kitchen charge.</p></article></div></section>
+<section id="workspace"><small>STUDIONET · CHAIN 61999</small><h2>Case workspace</h2><div class="panel">
+<p><a href="https://explorer-studio.genlayer.com/address/0x751a83a77A0BF05a72F535d93Db8a176CDB60f2A">Contract</a> · <a href="https://explorer-studio.genlayer.com/tx/0x39b36ffe360778bf64380e42a6c668d4a70439ef1e42e14330a6b040dc637f18">Deployment</a> · <a href="https://studio.genlayer.com/run-debug" target="_blank" rel="noopener noreferrer">Studio signing ↗</a></p>
+<p class="notice">Use fictional or redacted excerpts. Evidence and account addresses are public on StudioNet.</p>
+<label>Case ID<input id="case" pattern="[a-f0-9]{64}" placeholder="64 lowercase hexadecimal characters"></label>
+<button id="read">Read case</button> <button id="generate">Generate case ID</button>
+<div id="result"></div>
+<details><summary>Prepare a Studio transaction</summary><p>Prepare the arguments, then submit the matching method in Studio Run and Debug using a built-in account. Track the returned hash here.</p>
+<form id="actions"><label>Method<select id="method"></select></label><div id="fields"></div><button>Prepare arguments</button></form><pre id="arguments" hidden></pre></details>
+<form id="tracking"><label>Transaction hash<input id="hash" required pattern="0x[a-fA-F0-9]{64}"></label><button>Track transaction</button></form>
+<p id="status" role="status"></p></div></section><footer><a href="https://github.com/amzar1st/DepositReview">Source on GitHub</a></footer></main></html>

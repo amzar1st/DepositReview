@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "esbuild": "0.28.2",
+    "genlayer-js": "1.1.8"
+  },
+  "name": "depositreview",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild web/app.js --bundle --minify --outfile=dist/app.js && cp web/index.html dist/"
+  }
+}
