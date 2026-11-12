@@ -100,8 +100,10 @@ id('tracking').onsubmit = async event => {
       status(state + ' · ');
       id('status').append(link);
       if (state === 'FINALIZED') {
-        const execution = receipt.txExecutionResultName ?? receipt.txExecutionResult;
-        status((execution === 'FINISHED_WITH_RETURN' || execution === 1 ? 'Finalized successfully' : 'Finalized with execution result ' + (execution ?? 'unknown')) + ' · ');
+        const leader = receipt.consensus_data?.leader_receipt;
+        const studioExecution = (Array.isArray(leader) ? leader[0] : leader)?.execution_result;
+        const execution = receipt.txExecutionResultName ?? receipt.txExecutionResult ?? studioExecution;
+        status((execution === 'SUCCESS' || execution === 'FINISHED_WITH_RETURN' || execution === 1 ? 'Finalized successfully' : 'Finalized with execution result ' + (execution ?? 'unknown')) + ' · ');
         id('status').append(link);
         return;
       }
